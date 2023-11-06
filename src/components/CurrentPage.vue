@@ -9,6 +9,14 @@
     </div>
     <div class="swiper-button-prev" @click="prevPage"></div>
     <div class="swiper-button-next" @click="nextPage"></div>
+    <div class="custom-pagination">
+      <div
+        class="pagination-item"
+        v-for="(image, index) in images"
+        :key="index"
+        :class="{ 'active': index === currentPage }"
+      ></div>
+    </div>
   </div>
 </template>
 
@@ -26,6 +34,7 @@ export default {
         '198608.jpg',
       ],
       mySwiper: null,
+      currentPage: 0,
     };
   },
   mounted() {
@@ -43,6 +52,9 @@ export default {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
+      });
+      this.mySwiper.on('slideChange', () => {
+        this.currentPage = this.mySwiper.realIndex;
       });
     },
     nextPage() {
@@ -68,5 +80,21 @@ export default {
   border-radius: 15px;
 }
 
+.custom-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
 
+.pagination-item {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  margin: 0 5px;
+}
+
+.pagination-item.active {
+  background-color: #007BFF;
+}
 </style>
