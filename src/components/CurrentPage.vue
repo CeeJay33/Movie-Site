@@ -1,91 +1,72 @@
 <template>
-    <div class="carousel">
-      <div class="carousel-container" :style="{ transform: `translateX(${translateX}px)` }">
-        <div class="carousel-item" v-for="(image, index) in images" :key="index">
-          <img :src="require(`@/assets/${image}`)" alt="Image" />
+  <div class="carousel">
+    <div class="swiper-container" ref="mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" v-for="(image, index) in images" :key="index">
+          <img :src="require(`@/assets/${image}`)" alt="Image" class="carousel-image" />
         </div>
       </div>
-      <i class="fa fa-chevron-left arrow left" @click="prevPage"></i>
-      <i class="fa fa-chevron-right arrow right" @click="nextPage"></i>
     </div>
-  </template>
-  
-  <script>
+    <div class="swiper-button-prev" @click="prevPage"></div>
+    <div class="swiper-button-next" @click="nextPage"></div>
+  </div>
+</template>
 
-  export default {
-    data() {
-      return {
-        images: [
-          'DC.webp',
-          'DC.webp',
-          'DC.webp',
-        ],
-        currentPage: 0,
-        translateX: 0,
-      };
+<script>
+import Swiper from 'swiper';
+import 'swiper/swiper-bundle.css'; // Import Swiper styles
+
+export default {
+  data() {
+    return {
+      images: [
+        'DC.webp',
+        'wp1867294-john-wick-wallpapers.jpg',
+        'wp2028630-dr-strange-wallpapers.jpg',
+        '198608.jpg',
+      ],
+      mySwiper: null,
+    };
+  },
+  mounted() {
+    this.initSwiper();
+  },
+  methods: {
+    initSwiper() {
+      this.mySwiper = new Swiper(this.$refs.mySwiper, {
+        // Configuration options go here
+        centeredSlides: true,
+        spaceBetween: 40,
+        slidesPerView: 1.4,
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
     },
-    methods: {
-      nextPage() {
-        if (this.currentPage < this.images.length - 1) {
-          this.currentPage++;
-          this.translateX -= 400;
-        }
-      },
-      prevPage() {
-        if (this.currentPage > 0) {
-          this.currentPage--;
-          this.translateX += 400;
-        }
-      },
+    nextPage() {
+      this.mySwiper.slideNext();
     },
-  };
-  </script>
-  
-  <style>
-body{
-    background-color:  #18181b;
+    prevPage() {
+      this.mySwiper.slidePrev();
+    },
+  },
+};
+</script>
+
+<style scoped>
+.carousel {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
 }
-  .carousel {
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .carousel-container {
-    display: flex;
-    justify-content: center;
-    align-items: centers;
-    gap: 1rem;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .carousel-item {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 350px;
-  }
-  
-  .carousel-item img {
-    max-height: 100%;
-    border-radius: 15px;
-  }
-  
-  .arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-  }
-  
-  .left {
-    left: 10px;
-  }
-  
-  .right {
-    right: 10px;
-  }
-  </style>
-  
+
+.carousel-image {
+  width: 900px;
+  height: 450px;
+  border-radius: 15px;
+}
+
+
+</style>
