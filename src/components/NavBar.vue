@@ -58,6 +58,9 @@
     justify-content: space-around;
      background-color: #18181b;
      padding: 1rem 0;
+     position: sticky;
+     top: 0;
+     z-index: 9;
   }
 
 .nav{
@@ -99,6 +102,14 @@ background: linear-gradient(90deg, rgba(5,155,185,1) 12%, rgba(122,111,255,1) 66
 .nav2_section img{
     width: 30px;
     cursor: pointer;
+}
+
+@media (max-width:499px){
+  .nav_section ul {
+    gap: 2rem;
+    color: #fff;
+    display: none;
+}
 }
   </style>
                                                                                      

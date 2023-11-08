@@ -78,6 +78,9 @@ export default {
   width: 900px;
   height: 450px;
   border-radius: 15px;
+  opacity: 0.8;
+    background-color: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+
 }
 
 .custom-pagination {
@@ -92,6 +95,32 @@ export default {
   border-radius: 50%;
   background-color: white;
   margin: 0 5px;
+}
+@media (max-width:499px){
+  body{
+    overflow-x: none;
+  }
+  .carousel[data-v-a8694cb0] {
+    width: 600px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+.carousel-image[data-v-a8694cb0][data-v-a8694cb0] {
+    width: 270px;
+    height: 450px;
+    border-radius: 15px;
+    opacity: 0.8;
+    background-color: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+}
+
+.carousel[data-v-a8694cb0][data-v-a8694cb0] {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
 }
 
 .pagination-item.active {
