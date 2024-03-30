@@ -88,8 +88,8 @@
     border-radius: 10px;
     cursor: pointer;
     background: rgb(5,155,185);
-background: linear-gradient(90deg, rgba(5,155,185,1) 12%, rgba(122,111,255,1) 66%, rgba(164,61,255,1) 100%);  }
-  
+background: linear-gradient(90deg, rgba(122,111,255,1) 12%, rgba(122,111,255,1) 66%, rgba(164,61,255,1) 100%);  
+  }  
 .nav2_section .btnn{
     padding: 8px 17px;
     cursor: pointer;

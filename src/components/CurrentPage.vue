@@ -30,8 +30,9 @@ export default {
       images: [
         'DC.webp',
         'wp1867294-john-wick-wallpapers.jpg',
+        'GfzwEBy5XYUZnfV5tkZ7dH-1920-80.jpg.webp',
         'wp2028630-dr-strange-wallpapers.jpg',
-        '198608.jpg',
+        
       ],
       mySwiper: null,
       currentPage: 0,
@@ -43,7 +44,6 @@ export default {
   methods: {
     initSwiper() {
       this.mySwiper = new Swiper(this.$refs.mySwiper, {
-        // Configuration options go here
         centeredSlides: true,
         spaceBetween: 40,
         slidesPerView: 1.4,
@@ -107,7 +107,7 @@ export default {
     text-align: center;
 }
 .carousel-image[data-v-a8694cb0][data-v-a8694cb0] {
-    width: 270px;
+    width: 310px;
     height: 450px;
     border-radius: 15px;
     opacity: 0.8;

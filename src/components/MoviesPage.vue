@@ -2,31 +2,31 @@
     <div class="movies">
         <div class="movie_section">
             <div class="movie">
-                <img src="../assets/wp1867294-john-wick-wallpapers.jpg" class="imgg" alt="">
+                <img src="../assets/avatar-publicity_still-h_2019.webp" class="imgg" alt="">
                 <div class="descript">
                     <span class="num">680+</span>
                     <span class="alph">Seriels</span>
                 </div>
             </div>
             <div class="movie">
-                <img src="../assets/wp2028630-dr-strange-wallpapers.jpg" class="imgg" alt="">
+                <img src="../assets/avatar-1.webp" class="imgg" alt="">
                 <div class="descript">
                     <span class="num">680+</span>
                     <span class="alph">Seriels</span>
                 </div>
                 </div>
 <div class="movie">
-    <img src="../assets/wp1867294-john-wick-wallpapers.jpg" class="imgg" alt="">
+    <img src="../assets/2211orgbelairimage2025x30000nanabelairs2newseasonfeb23engna000123286-scaled.jpg-5a842ff.webp" class="imgg" alt="">
     <div class="descript">
                     <span class="num">2300+</span>
                     <span class="alph">Seriels</span>
                 </div>
 </div>
 <div class="movie">
-    <img src="../assets/wp1867294-john-wick-wallpapers.jpg" class="imgg" alt="">
+    <img src="../assets/download (2).jpg" class="imgg" alt="">
     <div class="descript">
                     <span class="num">1000+</span>
-                    <span class="alph">Seriels</span>
+                    <span class="alph">Movies</span>
                 </div>
 </div>
         </div>
@@ -319,7 +319,7 @@ body{
     border-radius: 10px;
     opacity: 0.7;
     cursor: pointer;
-    background-color: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0.9));
+    /* background-color: linear-gradient(rgba(205, 205, 205, 0.9), rgba(0, 0, 0.9)); */
 }
 
 .bottons{
@@ -354,7 +354,7 @@ body{
 }
 
 .subscription .sub{
-    color: #007BFF;
+    color: #a851f5;
 }
 
 @media (max-width:499px){
@@ -364,10 +364,10 @@ body{
 
   .movie_section {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
+    overflow-y: scroll;
 }
 
 }
